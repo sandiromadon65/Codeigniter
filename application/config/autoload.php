@@ -135,5 +135,5 @@ $autoload['language'] = array();
 $autoload['model'] = array(
     'Santri_model', 'Profil_model', 'Pengurus_model', 'Kegiatan_model',
     'Gedung_model', 'Galeri_model', 'Admin_model', 'Jabatan_pengurus_model',
-    'Struktur_organisasi_model', 'Animasi_model'
+    'Struktur_organisasi_model', 'Animasi_model', 'Kamar_model'
 );

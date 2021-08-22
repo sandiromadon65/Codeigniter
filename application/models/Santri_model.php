@@ -3,6 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Santri_model extends CI_Model {
 	private $table = 'santri';
+	private $kamartable = 'tb_kamar';
 
 	/**
 	 * MENGAMBIL SEMUA DATA SANTRI
@@ -52,6 +53,13 @@ class Santri_model extends CI_Model {
                         ->update($this->table, $data);
 
 	}
+
+	public function get_santri($table, $where){
+
+		return $this->db->get_where($table, $where);
+  
+	  }
+
 
 	/**
 	 * MENGHAPUS DATA SANTRI BERDASARKAN id_santri

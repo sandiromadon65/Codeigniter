@@ -39,6 +39,13 @@
     </li>
 
     <li class="nav-item">
+      <a href="<?= site_url() ?>admin/kamar" class="nav-link <?= $this->uri->segment(2) == 'kamar' ? 'active' : '' ?>">
+        <i class="nav-icon fa fa-image"></i>
+        <p>Kamar</p>
+      </a>
+    </li>
+
+    <li class="nav-item">
       <a href="<?= site_url() ?>admin/pengurus" class="nav-link <?= $this->uri->segment(2) == 'pengurus' ? 'active' : '' ?>">
         <i class="nav-icon fa fa-user-circle"></i>
         <p>Pengurus</p>

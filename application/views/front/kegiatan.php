@@ -4,7 +4,7 @@
         <div class="card">
             <div class="header bg-green">
                 <h2>
-                    Kegiatan Pondok Pesantren Al-Halim Garut
+                    Kegiatan Pondok Pesantren Al - Ittihad
                 </h2>
             </div>
             <div class="body">

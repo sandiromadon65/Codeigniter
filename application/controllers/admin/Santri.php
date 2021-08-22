@@ -39,6 +39,7 @@ class Santri extends CI_Controller
 			'sidebar' => $this->load->view('admin/sidebar_view', NULL, TRUE),
 			'content' => $this->load->view('admin/santri/tambah', [
 				'pengurus' => $this->Pengurus_model->get_pengurus(),
+				'kamar' => $this->Kamar_model->get_kamar5(),
 				'gedung' => $this->Gedung_model->get_gedung()
 			], TRUE),
 			'user_admin' => $this->Admin_model->data_user_admin($this->session->userdata('admin_id')),
@@ -81,6 +82,10 @@ class Santri extends CI_Controller
 			'required' => 'Pengurus Wajib Diisi'
 		]);
 
+		$this->form_validation->set_rules('kamar', 'Pengurus', 'trim|required', [
+			'required' => 'Kamar Wajib Diisi'
+		]);
+
 		$this->form_validation->set_rules('nama_gedung', 'Gedung', 'trim|required', [
 			'required' => 'Gedung Wajib Diisi'
 		]);
@@ -103,9 +108,22 @@ class Santri extends CI_Controller
 			if (!$this->upload->do_upload('foto')) {
 				$this->set_error_upload_flashdata();
 			} else {
-				$upload = $this->upload->data();
-
-				$data = [
+				$data = $this->upload->data();
+				$config['image_library'] = 'gd2';
+				$config['source_image'] = './uploads/' . $data['file_name'];
+				$config['new_image'] = './uploads/' . $data['file_name'];
+				$config['quality'] = '100%';
+				$config['width'] = 1024;
+				$config['height'] = 768;
+				$config['remove_spaces'] = true;
+				$this->load->library('image_lib', $config);
+				$this->image_lib->resize();
+				$image_path = "$data[file_name]";
+				$data_order['images'] = $image_path;
+			}	
+				
+				$id_kamar = $this->input->post('kamar');
+				$data = [					
 					'nama_santri' => $this->input->post('nama_santri'),
 					'tgl_lahir' => $this->input->post('tgl_lahir'),
 					'jenis_kelamin' => $this->input->post('jenis_kelamin'),
@@ -114,18 +132,29 @@ class Santri extends CI_Controller
 					'nama_ibu' => $this->input->post('nama_ibu'),
 					'status' => $this->input->post('status'),
 					'tgl_masuk' => $this->input->post('tgl_masuk'),
-					'foto' => $upload['file_name'],
+					'foto' => $image_path,
 					'id_admin' => $this->session->admin_id,
 					'id_pengurus_pengajar' => $this->input->post('id_pengurus_pengajar'),
+					'id_kamar' => $this->input->post('kamar'),
 					'nama_gedung' => $this->input->post('nama_gedung'),
-				];
+					
+					];
+					$succes = $this->Santri_model->get_santris();
+					$santri = $this->Kamar_model->get_kuota("kamar", [
 
-				if ($this->Santri_model->insert_santri($data)) {
+						"id_kamar" => floatval($id_kamar)
+						
+					])->first_row()->kuota;
+					
+					$kuota = $santri - 1;						
+					$this->Kamar_model->update(floatval($id_kamar), [
+						"kuota" => $kuota,
+					]);
+					if (succes) {
 					$this->session->set_flashdata('success', 'Data Berhasil Disimpan');
 					redirect($this->redirectTo);
-				}
-			}
-		}
+					}
+					}
 	}
 
 	public function edit($id_santri)

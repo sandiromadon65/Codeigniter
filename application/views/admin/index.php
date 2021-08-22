@@ -75,7 +75,7 @@
             <!-- Brand Logo -->
             <a href="<?= site_url() ?>admin/animasi" class="brand-link bg-success">
                 <img src="<?= base_url('assets/front/images/AL.jpeg') ?>" alt="Logo" class="brand-image img-circle elevation-3" style="opacity: .9">
-                <span class="brand-text font-weight-light">AL-HALIM</span>
+                <span class="brand-text font-weight-light">AL - ITTIHAD</span>
             </a>
 
             <!-- Sidebar -->

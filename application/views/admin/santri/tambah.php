@@ -105,6 +105,16 @@
                 <?php endforeach ?>
               </select>
             </div>
+            <div class="form-group">
+              <label>Nama Kamar</label>
+              <select name="kamar" value="id_kamar" class="form-control">
+                <option value="">- Pilih Kamar -</option>
+                <?php foreach ($kamar as $row) : ?>
+                  <option <?php echo set_select('id_kamar', $row->id_kamar); ?> value="<?= $row->id_kamar ?>"><?= $row->nama_kamar ?>
+                  </option>
+                <?php endforeach ?>
+              </select>
+            </div>
 
             <div class="form-group">
               <label>Nama Gedung</label>
