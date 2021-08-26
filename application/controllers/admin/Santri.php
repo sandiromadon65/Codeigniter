@@ -139,7 +139,8 @@ class Santri extends CI_Controller
 					'nama_gedung' => $this->input->post('nama_gedung'),
 					
 					];
-					$succes = $this->Santri_model->get_santris();
+					$succes = $this->Santri_model->insert_santri($data);
+					$id_kamar = $this->input->post('kamar');;
 					$santri = $this->Kamar_model->get_kuota("kamar", [
 
 						"id_kamar" => floatval($id_kamar)

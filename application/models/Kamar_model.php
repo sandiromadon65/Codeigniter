@@ -17,7 +17,7 @@ class Kamar_model extends CI_Model {
 	{
 		$this->db->select('*');
         $this->db->from('kamar');
-        $this->db->where('kuota < 5');
+        $this->db->where('kuota > 0');
         $query = $this->db->get();
         return $query->result();
 	}

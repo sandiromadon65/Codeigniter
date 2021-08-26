@@ -17,6 +17,7 @@
                                 <th>Nama Kamar</th>
                                 <th>Kuota</th>
                                 <th>Keterangan</th>
+                                
                             </tr>
                         </thead>
                         <tbody>
@@ -29,7 +30,14 @@
                                     <?= $row->nama_kamar?>
                                 </td>
                                 <td>
-                                    <?= $row->kuota?>
+                                    <?php  if($row->kuota > 0) {
+                                    echo "$row->kuota";
+                                  }
+                                  else
+                                  {
+                                    echo "<button type='button' class='btn btn-block btn-success btn-flat'>Sudah Penuh</button>";
+                                  } 
+                                        ?>
                                 </td>
                                 <td>
                                     <?= $row->keterangan?>

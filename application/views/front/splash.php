@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Portal Informasi Pondok Pesantren Al Halim Garut</title>
+    <title>Portal Informasi Pondok Pesantren Al Ittihad</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <style>
@@ -24,7 +24,7 @@
 		    width: 100%;
 		    min-height: 400px;
 		    background-size: cover;
-		    background-image: url('<?= base_url('assets/front/slider.jpeg')?>');
+		    background-image: url('<?= base_url('assets/front/slider.jpg')?>');
 		    padding: 16px;
 		}
 
@@ -46,7 +46,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-dark bg-success">
         <a class="navbar-brand" href="<?= base_url();?>">
-            <img style="width: 100px; display: inline;margin-right: 20px;" src="<?= base_url('assets/front/images/AL.jpeg')?>" alt="">SISTEM INFORMASI PONDOK PESANTREN AL HALIM GARUT
+            <img style="width: 100px; display: inline;margin-right: 20px;" src="<?= base_url('assets/front/images/AL.png')?>" alt="">SISTEM INFORMASI PONDOK PESANTREN AL ITTIHAD
         </a>
     </nav>
     <!-- End Navigation -->

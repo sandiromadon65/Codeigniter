@@ -37,7 +37,7 @@
       </div>
       <div class="card-body">
         <div class="col-md-12 table-responsive">
-          <table class="table table-striped table-hover">
+        <table id="example" class="display" style="width:100%">
             <thead>
               <th style="width: 5%">No</th>
               <th style="width: 25%">Foto Santri</th>
@@ -108,10 +108,16 @@
 
 <script type="text/javascript">
 
-  $(document).ready(function() {
-    $('table').DataTable();
-  });
-
+$(document).ready(function() {
+    $('#example').DataTable( {
+        buttons: [
+            'copyHtml5',
+            'excelHtml5',
+            'csvHtml5',
+            'pdfHtml5'
+        ]
+    } );
+} );
   function detailSantri(id_santri) {
     $('#modalDetailSantri').modal('show');
     let output = "";
@@ -173,6 +179,11 @@
         <tr>
         <th>Nama Pengurus</th>
         <td>${data.nama_pengurus}</td>
+        </tr>
+
+        <tr>
+        <th>Nama Pengurus</th>
+        <td>${data.nama_kamar}</td>
         </tr>
 
         <tr>

@@ -37,6 +37,7 @@ class Santri_model extends CI_Model {
 		return $this->db->from($this->table)
 						->join('admin', 'admin.id_admin = santri.id_admin')
 						->join('pengurus', 'pengurus.id_pengurus = santri.id_pengurus_pengajar')
+						->join('kamar', 'kamar.id_kamar = santri.id_kamar')
 						->where('id_santri', $id_santri)
                         ->get()->row();
 	}

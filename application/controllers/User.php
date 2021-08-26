@@ -40,7 +40,7 @@ class User extends CI_Controller {
 					'admin_id' => $data_admin->id_admin,
 				]);
 
-				redirect('admin/animasi');
+				redirect('admin/gedung');
 			} else {
 				$this->session->set_flashdata('message_login', 'Password Anda Tidak Cocok, Silahkan Cek Kembali');
 				redirect('admin/login');

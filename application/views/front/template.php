@@ -116,8 +116,8 @@
 					data-target="#navbar-collapse" aria-expanded="false"></a>
 				<a href="javascript:void(0);" class="bars"></a>
 				<a class="navbar-brand" href="<?= base_url();?>">
-					<img style="width: 70px; display: inline;margin-right: 20px;margin-top: -5px"
-						src="<?= base_url('assets/front/images/AL.jpeg')?>" alt="">SISTEM INFORMASI PONDOK PESANTREN AL
+					<img style="width: 50px; display: inline;margin-right: 20px;margin-top: -5px"
+						src="<?= base_url('assets/front/images/AL.png')?>" alt="">SISTEM INFORMASI PONDOK PESANTREN AL
 					- ITTIHAD
 				</a>
 			</div>

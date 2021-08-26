@@ -16,7 +16,7 @@ class User extends CI_Controller
 	public function index()
 	{
 		$data = [
-			'title' => 'Informasi Pondok Al Halim | Halaman Admin - Edit Data Admin',
+			'title' => 'Informasi Pondok Al Ittihad | Halaman Admin - Edit Data Admin',
 			'sidebar' => $this->load->view('admin/sidebar_view', NULL, TRUE),
 			'content' => $this->load->view('admin/pengaturan/index', [
 				'admin' => $this->Admin_model->data_user_admin($this->session->userdata('admin_id'))
@@ -69,7 +69,7 @@ class User extends CI_Controller
 	public function index_users()
 	{
 		$data = [
-			'title' => 'Informasi Pondok Al Halim | Halaman Admin - Edit Data Admin',
+			'title' => 'Informasi Pondok Al Ittihad | Halaman Admin - Edit Data Admin',
 			'sidebar' => $this->load->view('admin/sidebar_view', NULL, TRUE),
 			'content' => $this->load->view('admin/users/index', [
 				'admin' => $this->Admin_model->get_admin()
@@ -83,7 +83,7 @@ class User extends CI_Controller
 	public function tambah_admin()
 	{
 		$data = [
-			'title' => 'Informasi Pondok Al Halim | Halaman Admin - Edit Data Admin',
+			'title' => 'Informasi Pondok Al Ittihad | Halaman Admin - Edit Data Admin',
 			'sidebar' => $this->load->view('admin/sidebar_view', NULL, TRUE),
 			'content' => $this->load->view('admin/users/tambah', NULL, TRUE),
 			'user_admin' => $this->Admin_model->data_user_admin($this->session->userdata('admin_id')),

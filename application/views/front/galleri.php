@@ -3,7 +3,7 @@
         <div class="card">
             <div class="header bg-green">
                 <h2>
-                    GALLERI FOTO PONDOK PESANTREN AL HALIM GARUT
+                    GALLERI FOTO PONDOK PESANTREN AL ITTIHAD
                    
                 </h2>
             </div>
